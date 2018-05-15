@@ -1,5 +1,6 @@
-from django.contrib.localflavor.us.models import USStateField
+from localflavor.us.forms import USStateField
 from django.db import models
+
 
 class Person(models.Model):
     full_name = models.CharField(max_length=255)
@@ -9,13 +10,15 @@ class Person(models.Model):
     def __unicode__(self):
         return self.full_name
 
+
 class Address(models.Model):
     street = models.CharField(max_length=150)
     city = models.CharField(max_length=100)
     state = USStateField()
     zipcode = models.CharField(max_length=5)
 
-    person = models.OneToOneField(Person, null=True)
+    person = models.OneToOneField(
+        Person, on_delete=models.CASCADE, null=True)
 
     def __unicode__(self):
         return self.street

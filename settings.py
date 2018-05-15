@@ -52,7 +52,7 @@ MEDIA_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '#w2tv$y7_o*z-b30o)ag2nm)+rs3!dj4^wici57hrv7j-#pmw$'
+SECRET_KEY = 'ls|n}.jt/"w/*o)sL8]%[zG!3%#_}`RQgwAhJxh~i6-$0J4ug'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -67,7 +67,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'resume_builder.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.core.management',
+    'localflavor',
     'people',
     'experience',
 )
